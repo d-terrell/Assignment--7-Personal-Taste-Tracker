@@ -1,12 +1,14 @@
 console.log("Hello World!");
 // 1. Create an array called favoriteFoods with at least 6 foods you love.
 
-
+const favoriteFoods = ["Pickled Okra", "Salad", "Meatball subs", "Onion soup", "Stuffed Mushrooms", "Pasta"];
 
 // 2. Loop through the list and print: "One of my favorite foods is ______."
 
 
-
+for (let i = 0; i < favoriteFoods.length; i++) {
+  console.log("One of my favorite foods is", favoriteFoods[i])
+}
 
 
 // 3. Print out the rating for each food with a ranking like:
@@ -14,21 +16,38 @@ console.log("Hello World!");
 // "My #2 favorite food is Sushi"
 // ...etc.
 
-
-
-
+favoriteFoods.forEach( // Loops through favortireFoods
+  function(food, index) { // For each item a function is called
+  console.log(`My #${index + 1} favorite food is ${food}`); // Instructions for function (each item)
+});
+  //forEach:
+  // - Gives you each item and it's position
+  //     - First parameter = the item itself
+  //     - Second parameter = the position/index
+  // - Requires a function
+  //     -  forEach needs to know what to do with each item,
+  //     -  You tell it by giving it a function with instructions.
+  // $ Signals to Javascript "Hey, code is about to be inserted here"
+  // {} contains the Javascript code to evaluate
+  
 
 // 4a. Create a function printFoodRecommendation(foodName) that prints out the following for the foodName provided
     // "Have you ever tried ____?"
     // "I always recommend ____ to friends."
     // "Trust me — ____ is delicious."
 
-
+function printFoodRecommendation(foodName) {
+  console.log("Have you ever tried " + foodName + "?");
+  console.log("I always recommend " + foodName +  " to friends.");
+  console.log("Trust me " + foodName + " is delicious.");
+}
 
 
 // 4b. Call the function at least 3 times
 
-
+printFoodRecommendation("Pickled Okra");
+printFoodRecommendation("Meatball subs");
+printFoodRecommendation("Pasta");
 
 // Here's a list of 50 friends' favorite foods:
 let friendFavorites = [
