@@ -42,7 +42,6 @@ function printFoodRecommendation(foodName) {
   console.log("Trust me " + foodName + " is delicious.");
 }
 
-
 // 4b. Call the function at least 3 times
 
 printFoodRecommendation("Pickled Okra");
@@ -56,23 +55,35 @@ let friendFavorites = [
 
 // 5. Print out only foods that have an "a" in the name. For example, "Pizza" would not be included, but "Pasta" would be.
 
-
+friendFavorites.forEach(function(food) {
+  if (food.includes("a")) { // food.includes("a"): Returns true if the food has an "a".
+    console.log(food);
+  }
+});
 
 // 6. Store the result in an array called foodsWithA. Print out the array.
 
-
+let foodsWithA = friendFavorites.filter(food => food.includes("a")); // filter() : Creates a new array containing only items that pass the test.
+                                                                     // => is an "arrow function": It tells JavaScript "for each food, do this ____".
+foodsWithA.forEach(food => console.log(food));
 
 // 7. Create a new array longFoodNames for foods with names longer than 6 characters.
 
+let longFoodNames = friendFavorites.filter(food => food.length > 6); // For each food item in the array friendFavorites, check if the current item's
+                                                                     // character length is greater than 6.
 
 
 // 8. Create another array shortFoodNames for foods 6 characters or shorter.
 
-
-
+let shortFoodNames = friendFavorites.filter(food => food.length <= 6); // For each food item in the array friendFavorites, check if the current item's
+                                                                     // character length is the same as or smaller than 6.
 // 9. Print both arrays and compare:
 // "There are more long-named foods." OR "There are more short-named foods."
-
+console.log(longFoodNames);
+console.log(shortFoodNames);
+console.log("There are more long-named foods");
 
 // 10. STRETCH: Find the longest food name and print:
 // "The longest food name in the list is ______ with ___ characters."
+
+let longestFoodName =friendFavorites.filter(food => food.length)
