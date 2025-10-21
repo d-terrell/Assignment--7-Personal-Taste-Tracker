@@ -7,7 +7,7 @@ const favoriteFoods = ["Pickled Okra", "Salad", "Meatball subs", "Onion soup", "
 
 
 for (let i = 0; i < favoriteFoods.length; i++) {
-  console.log("One of my favorite foods is", favoriteFoods[i])
+  console.log("One of my favorite foods is " + favoriteFoods[i])
 }
 
 
@@ -18,7 +18,7 @@ for (let i = 0; i < favoriteFoods.length; i++) {
 
 favoriteFoods.forEach( // Loops through favortireFoods
   function(food, index) { // For each item a function is called
-  console.log(`My #${index + 1} favorite food is ${food}`); // Instructions for function (each item)
+  console.log("My #" + (index + 1) + " favorite food is " + food); // Instructions for function (each item)
 });
   //forEach:
   // - Gives you each item and it's position
